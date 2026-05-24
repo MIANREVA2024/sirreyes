@@ -600,6 +600,15 @@
 					</div>
 					<a href="#modal-form" data-effect="mfp-zoom-in" class="def-btn services-btn">Solicitar servicio</a>
 				</div>
+				<div class="form-right">
+    <form id="contactForm">
+        <input type="text" id="main_nombre" placeholder="Tu Nombre*" required>
+        <input type="text" id="main_telefono" placeholder="Tu Teléfono*" required>
+        <input type="email" id="main_email" placeholder="Tu email">
+        <textarea id="main_comentario" cols="30" rows="5" placeholder="Cuéntanos sobre tu proyecto o haz tu consulta aquí..."></textarea>
+        <button type="submit" class="def-btn form-button">Enviar</button>
+    </form>
+</div>
 
 				
 				<!--
@@ -709,7 +718,7 @@
 	<script src="js/magnific-popup.min.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script src="js/script.js"></script>
-	<script>
+	<!--<script>
 document.getElementById("formWhatsApp").addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -722,7 +731,31 @@ document.getElementById("formWhatsApp").addEventListener("submit", function(e){
 
     window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
 });
-</script>
+</script>-->
+	<script>
+	// === SCRIPT PARA EL FORMULARIO PRINCIPAL DE CONTACTO (A WHATSAPP) ===
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Capturamos los valores usando los IDs únicos del formulario principal
+    let nombre = document.getElementById("main_nombre").value;
+    let telefono = document.getElementById("main_telefono").value;
+    let email = document.getElementById("main_email").value || "No especificado";
+    let comentario = document.getElementById("main_comentario").value || "Sin comentarios";
+
+    // Estructuramos el mensaje que te llegará a tu WhatsApp
+    let mensaje = `¡Hola! Solicito información desde el formulario de la web:\n\n` +
+                  `👤 Nombre: ${nombre}\n` +
+                  `📞 Teléfono: ${telefono}\n` +
+                  `✉️ Email: ${email}\n` +
+                  `💬 Mensaje: ${comentario}`;
+
+    // Tu número de teléfono configurado (el mismo del modal)
+    let numero = "34641712180"; 
+
+    // Abrimos WhatsApp en una pestaña nueva con el mensaje listo
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
+});
 
 <script>
 // === GALERÍA DE VIDEOS (Independiente y forzada en Español) ===
@@ -754,7 +787,7 @@ botonVideos.addEventListener('click', function(e) {
         mostrandoTodoVideos = true;
     }
 });
-
+	</script>
 // === GALERÍA DE FOTOS (Independiente y forzada en Español) ===
 const fotos = document.querySelectorAll('#s-gallery .gallery-wrap a');
 const botonFotos = document.getElementById('btn-fotos');
