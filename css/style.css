@@ -1822,3 +1822,92 @@ textarea::placeholder {
         display: none !important;
     }
 }
+
+
+/* ==========================================================================
+   CARRUSEL DE EQUIPO COMPLETO Y CORREGIDO (SOLO 1 IMAGEN A LA VEZ)
+   ========================================================================== */
+
+/* Desactivamos la fila original de la plantilla para que no ponga los elementos de lado */
+.s-team .team-row {
+    display: block !important;
+}
+
+/* Configuramos el contenedor del carrusel para centrarlo y ocultar los lados */
+.team-slider {
+    position: relative;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    padding: 0 50px !important;
+    overflow: hidden !important;
+}
+
+/* Forzamos a que cada diapositiva ocupe el 100% de la caja y se centre */
+.team-slider .swiper-slide {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Ajustamos la tarjeta para que se adapte perfectamente a Swiper sin flotados antiguos */
+.team-slider .team-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    float: none !important;
+}
+
+/* Estilos para las flechas laterales redondas e independientes */
+.team-slider .swiper-button-next,
+.team-slider .swiper-button-prev {
+    color: #ffffff !important;
+    width: 35px !important;
+    height: 35px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 50% !important;
+    z-index: 10 !important;
+}
+
+/* Tamaño de las puntas de las flechas */
+.team-slider .swiper-button-next::after,
+.team-slider .swiper-button-prev::after {
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+/* Colocación exacta en los bordes de la tarjeta */
+.team-slider .swiper-button-prev {
+    left: 5px !important;
+}
+.team-slider .swiper-button-next {
+    right: 5px !important;
+}
+
+/* ==========================================================================
+   REPARACIÓN DEFINITIVA: BARRA SUPERIOR QUE DESAPARECE AL SUBIR (HEADER TOP)
+   ========================================================================== */
+
+/* Forzamos a que la barra superior se vuelva a mostrar siempre que el menú NO esté fijo */
+.header:not(.header-fixed) .header-top {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    position: relative !important;
+    top: 0 !important;
+}
+
+/* Aseguramos que la estructura general de la cabecera se resetee al estar arriba del todo */
+.header:not(.header-fixed) {
+    position: relative !important;
+    top: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Ajuste para pantallas grandes (Escritorio) y móviles: Al bajar, ocultamos la barra superior */
+.header.header-fixed .header-top {
+    display: none !important;
+}
