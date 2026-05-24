@@ -1786,3 +1786,39 @@ textarea::placeholder {
 .team-slider .swiper-button-next {
     right: 5px;
 }
+/* ==========================================================================
+   REPARACIÓN DEFINITIVA: BARRA SUPERIOR QUE DESAPARECE AL SUBIR (HEADER TOP)
+   ========================================================================== */
+
+/* 1. Forzamos a que la barra superior se vuelva a mostrar siempre que el menú NO esté fijo */
+.header:not(.header-fixed) .header-top {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    position: relative !important;
+    top: 0 !important;
+}
+
+/* 2. Aseguramos que la estructura general de la cabecera se resetee al estar arriba del todo */
+.header:not(.header-fixed) {
+    position: relative !important;
+    top: 0 !important;
+    box-shadow: none !important;
+}
+
+/* 3. Ajuste para pantallas grandes (Escritorio): Al bajar, ocultamos la barra superior elegantemente 
+      para que el menú fijo no ocupe demasiado espacio en pantalla */
+@media (min-width: 992px) {
+    .header.header-fixed .header-top {
+        display: none !important;
+    }
+}
+
+/* 4. Ajuste para pantallas móviles (Menú Pegajoso): Si mantienes el menú fijo en móvil al bajar,
+      ocultamos la barra superior negra para optimizar el espacio de la pantalla del teléfono */
+@media (max-width: 991px) {
+    .header.header-fixed .header-top {
+        display: none !important;
+    }
+}
