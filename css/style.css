@@ -1738,3 +1738,51 @@ textarea::placeholder {
 	}
 }
 /* Responsive END */
+/* === ESTILOS PARA EL SLIDER DEL EQUIPO CENTRADO === */
+.team-slider {
+    position: relative;
+    max-width: 360px;     /* Ancho perfecto para que la tarjeta se vea estilizada como en tu dibujo */
+    margin: 0 auto;       /* Esto fuerza a que todo el bloque se mueva al centro de la web */
+    padding: 0 50px;      /* Espacio seguro en los lados para que las flechas no pisen la foto */
+    overflow: visible !important; /* Permite que las flechas sobresalgan un poco si es necesario */
+}
+
+/* Forzar que cada diapositiva se centre perfectamente dentro de la caja */
+.team-slider .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-slider .team-item {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Estilos de las flechas laterales */
+.team-slider .swiper-button-next,
+.team-slider .swiper-button-prev {
+    color: #ffffff;       /* Flechas en color blanco */
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3); /* Un fondo circular sutil para que se vean bien sobre cualquier fondo */
+    border-radius: 50%;
+}
+
+/* Tamaño de las flechas de Swiper */
+.team-slider .swiper-button-next::after,
+.team-slider .swiper-button-prev::after {
+    font-size: 18px;      /* Tamaño estilizado para las flechas */
+    font-weight: bold;
+}
+
+/* Posicionamiento exacto de las flechas a los lados de la tarjeta */
+.team-slider .swiper-button-prev {
+    left: 5px;
+}
+
+.team-slider .swiper-button-next {
+    right: 5px;
+}
