@@ -1594,15 +1594,29 @@ textarea::placeholder {
 	.footer-info-item {
 		justify-content: center;
 	}
-	.footer-social {
-		justify-content: center;
-		margin-top: 40px;
-	}
+	
 	.footer-nav {
 		margin-bottom: 30px;
 	}
 	/* Footer 768 END */
 
+}
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio uniforme entre los iconos */
+}
+
+.footer-social .social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+/* Efecto sutil al pasar el ratón por encima */
+.footer-social .social-icon-link:hover {
+    transform: scale(1.1);
 }
 
 
