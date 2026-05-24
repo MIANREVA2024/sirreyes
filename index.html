@@ -788,7 +788,17 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     // Abrimos WhatsApp en una pestaña nueva con el mensaje listo
     window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
 });</script>
-
+	<script>
+// === CARRUSEL DE NUESTRO EQUIPO (Swiper) ===
+const teamSlider = new Swiper('.team-slider', {
+    slidesPerView: 1,         // Muestra solo 1 integrante a la vez
+    spaceBetween: 30,        // Espacio entre diapositivas
+    loop: true,              // Hace que el carrusel sea infinito
+    navigation: {            // Vincula las flechas de navegación
+        nextEl: '.team-next',
+        prevEl: '.team-prev',
+    },
+});</script>
 <script>
 // === GALERÍA DE VIDEOS (Independiente y forzada en Español) ===
 const videos = document.querySelectorAll('#s-videos .gallery-wrap video');
