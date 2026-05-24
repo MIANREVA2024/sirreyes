@@ -1836,19 +1836,27 @@ textarea::placeholder {
 /* Configuramos el contenedor del carrusel para centrarlo y ocultar los lados */
 .team-slider {
     position: relative;
-    max-width: 360px !important;
+    max-width: 440px !important;
     margin: 0 auto !important;
     padding: 0 50px !important;
     overflow: hidden !important;
 }
+.team-slider .swiper-slide:not(.swiper-slide-active) {
+     opacity: 0 !important;
+     visibility: hidden !important;
+ }
+ .team-slider .swiper-slide.swiper-slide-active {
+     opacity: 1 !important;
+     visibility: visible !important;
+ }
 
 /* Forzamos a que cada diapositiva ocupe el 100% de la caja y se centre */
-.team-slider .swiper-slide {
+/*.team-slider .swiper-slide {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
-}
+}*/
 
 /* Ajustamos la tarjeta para que se adapte perfectamente a Swiper sin flotados antiguos */
 .team-slider .team-item {
